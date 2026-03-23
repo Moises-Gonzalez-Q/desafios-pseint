@@ -8,6 +8,8 @@ Proceso Desafio01login
 	Definir USERLOGIN Como Caracter;
 	Definir PASSWORDLOGIN Como Caracter;
 	Definir logrado Como Entero;
+	Definir intentofallido Como Entero;
+	
 	
 	//DESIGNACIONES
 	opmenuprin <- 0;
@@ -17,6 +19,7 @@ Proceso Desafio01login
 	USERLOGIN <- "0";
 	PASSWORDLOGIN <- "0";
 	logrado <- 0;
+	intentofallido <-0;
 	
 	//menu principal
 	Repetir
@@ -80,6 +83,7 @@ Proceso Desafio01login
 						Limpiar Pantalla;
 					FinSi
 			2:
+				Repetir
 				Escribir "===============================";
 				Escribir "INGRESO DE USUARIOS REGISTRADOS";
 				Escribir "===============================";
@@ -102,6 +106,9 @@ Proceso Desafio01login
 					Escribir "=====================================";
 					logrado <-1;
 				SiNo
+					
+						
+				
 					USERLOGIN <- "0";
 					PASSWORDLOGIN <- "0";
 					logrado <- 0;
@@ -111,10 +118,11 @@ Proceso Desafio01login
 					Escribir Sin Saltar "PULSA ENTER PARA VOLVER A INTENTARLO";
 					Leer ENTER;
 					Limpiar Pantalla;
+					intentofallido <- intentofallido +1;
+				FinSi	
+						
+				Hasta Que logrado == 1 o intentofallido ==3
 					
-					
-					
-				FinSi
 	
 		FinSegun
 	Hasta Que logrado == 1	
