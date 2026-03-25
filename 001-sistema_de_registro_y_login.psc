@@ -121,7 +121,23 @@ Proceso Desafio01login
 					intentofallido <- intentofallido +1;
 				FinSi	
 						
-				Hasta Que logrado == 1 o intentofallido ==3
+			Hasta Que logrado == 1 o intentofallido ==3
+			
+			si intentofallido == 3 Entonces
+				
+				Escribir "=====";
+				Escribir "ERROR";
+				Escribir "=====";
+				Escribir "DEMACIADOS INTENTOS FALLIDOS, SU CUENTA HA SIDO BLOQUEADA";
+				Escribir "SUS DATOS DE USUARIO Y CONTRASEÑA HAN SIDO ELIMINADOS";
+				Escribir "PORFAVOR REGISTRESE NUEVAMENTE";
+				Escribir Sin Saltar "PRESIONE ENTER PARA VOLVER A INTENTAR";
+				Leer ENTER;
+				Limpiar Pantalla;
+				username <- "0";
+				PASSWORDLOGIN <-"0";
+	
+			FinSi
 					
 	
 		FinSegun
